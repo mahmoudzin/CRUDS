@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/mine.css">
+
+</head>
+
+<body>
+
+  <div class="w-75 mx-auto shadow-lg p-5 m-5">
+    <h1>CRUD SYSTEM</h1>
+
+    <label>productName:</label>
+    <input class="form-control" id="productName">
+
+
+    <label>ProductCategory:</label>
+    <input class="form-control" id="productCategory">
+
+
+    <label>ProductPrice:</label>
+    <input class="form-control" id="productPrice">
+
+
+    <label>ProductDescription:</label>
+    <textarea id="productDescription" class="form-control"></textarea>
+
+<div>
+  <span id="control">
+  </span>
+  <button onclick=" clear(); " class="btn btn-primary mt-3">clear</button>
+      <!-- <button id="control" onclick=" createProduct(); " class="btn btn-primary mt-3">add product</button> -->
+ 
+</div>
+
+  </div>
+
+
+
+  <input id="search" oninput="search();" type="text" placeholder="search....." class="form-control w-50 mx-auto">
+
+  <table class="table w-75 mx-auto mt-3">
+    <thead>
+
+      <th>index</th>
+      <th>name</th>
+      <th>category</th>
+      <th>price</th>
+      <th>description</th>
+      <th>update</th>
+      <th>delete</th>
+
+    </thead>
+    <tbody id="tbody">
+    
+    </tbody>
+  </table>
+
+
+
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
