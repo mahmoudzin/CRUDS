@@ -7,62 +7,96 @@
 
 </head>
 
-<body>
+<body class="">
+  <!-- Navbar -->
 
-  <div class="w-75 mx-auto shadow-lg p-5 m-5">
-    <h1>CRUD SYSTEM</h1>
+  <nav class="bg-costume">
+    <div class="container">
+      <div class="">
+        <h1 class="text-white display-3 fw-bold py-5 text-center">CRUDSystem</h1>
+        <div class="row  justify-content-center">
+         <div class="col-md-3">
+           <select class="form-select main-bg-color text-white-50 py-2 border-0 fs-4 me-2" name="searchOption" id="searchType">
+             <option value="productName">Name</option>
+             <option value="productPrice">Price</option>
+             <option value="productCat">Category</option>
+           </select>
+         </div>
+          <div class="col-md-6 position-relative">
+            <input type="text" class="form-control main-bg-color text-white-50 py-2 border-0 fs-4"  placeholder="Search By the Product Name...." id="search" />
+            <i class="fa fa-search position-absolute text-white-50"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+<!-- The Products Container -->
+  <div class="productes-container py-5 px-3 col-md-9 mx-auto position-relative">
+    <button class="open-add-modle rounded-circle position-absolute" data-bs-toggle="modal" data-bs-target="#exampleModal" id="openModal">
+      <i class="fa fa-add fa-2x"></i>
+    </button>
 
-    <label>productName:</label>
-    <input class="form-control" id="productName">
+    <!-- Add module -->
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content sec-bg-color">
+          <div class="modal-header">
+            <h5 class="modal-title main-color" id="exampleModalLabel">Add New</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <input class="form-control main-bg-color text-white-50 border-0 py-2 fs-4" id="productName" placeholder="Product Name...">
+              <div id="alertName"></div>
+            </div>
+            <div class="mb-3 d-flex">
+              <select class="form-select main-bg-color text-white-50 border-0 me-2 w-25 py-2 fs-4" name="searchOption" id="selCat">
+                <option value=" ">chose Category....</option>
+              </select>
+              <input class="form-control main-bg-color text-white-50 border-0 py-2 fs-4" id="productCategory" placeholder="Add A New Category...">
+              
+            </div>
+            <div id="alertCat"></div>
+            <div class="mb-3">
+              <input class="form-control main-bg-color text-white-50 border-0 py-2 fs-4" id="productPrice" placeholder="Product Price...">
+              <div id="alertPrice"></div>
+            </div>
+            <div class="mb-3">
+              <textarea id="productDescription" class="form-control main-bg-color text-white-50 py-2 fs-4text-white-50 border-0 mb-3" placeholder="Product Description..."></textarea>
+            </div>
+            <div id="alertForm"></div>
 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="add-btn main-color rounded-pill py-2 px-3" id="addBtn">Add</button>
+            <button type="button" class="add-btn main-color rounded-pill py-2 px-3 d-none" id="updateBtn" data-bs-dismiss="modal" aria-label="Close">Save Changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <label>ProductCategory:</label>
-    <input class="form-control" id="productCategory">
-
-
-    <label>ProductPrice:</label>
-    <input class="form-control" id="productPrice">
-
-
-    <label>ProductDescription:</label>
-    <textarea id="productDescription" class="form-control"></textarea>
-
-<div>
-  <span id="control">
-  </span>
-  <button onclick=" clear(); " class="btn btn-primary mt-3">clear</button>
-      <!-- <button id="control" onclick=" createProduct(); " class="btn btn-primary mt-3">add product</button> -->
- 
-</div>
-
-  </div>
-
-
-
-  <input id="search" oninput="search();" type="text" placeholder="search....." class="form-control w-50 mx-auto">
-
-  <table class="table w-75 mx-auto mt-3">
-    <thead>
-
-      <th>index</th>
-      <th>name</th>
-      <th>category</th>
-      <th>price</th>
-      <th>description</th>
-      <th>update</th>
-      <th>delete</th>
-
-    </thead>
-    <tbody id="tbody">
+    <div class="" id="products-status">
+      <table class="table mt-3 ">
+        <thead class="main-color">
+          <th>index</th>
+          <th id="name">name</th>
+          <th>category</th>
+          <th>price</th>
+          <th>description</th>
+          <th>update</th>
+          <th>delete</th>
+        </thead>
+        <tbody id="tbody" class=" text-white-50">
+        </tbody>
+      </table>
+    </div>
     
-    </tbody>
-  </table>
-
-
-
-
+  </div>
+  
+<!--  -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
-
 </body>
 
 </html>

@@ -1,0 +1,82 @@
+/*Global Varibals*/
+:root{
+    --main-color: #029270;
+    --main-bg-color: #1e202b;
+    --sec-bg-color:#262936
+}
+/*Global Classes*/
+body{
+    background-color:var(--main-bg-color);
+}
+.main-color{
+    color: var(--main-color);
+}
+.bg-costume{
+    background-color: var(--main-color);
+}
+.main-bg-color{
+    background-color: var(--main-bg-color)
+}
+.sec-bg-color{
+    background-color: var(--sec-bg-color)
+}
+/*Bootstarp Edites*/
+.form-control:focus{
+    background-color: var(--main-bg-color)
+}
+/*Nav*/
+nav{
+height:  50vh;
+}
+nav i{
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*productes-container*/
+
+.productes-container{
+    margin-bottom: 150px;
+    margin-top: -150px;
+    min-height: 300px;
+    background-color: var(--sec-bg-color);
+    overflow: hidden;
+}
+.open-add-modle{
+   right: -100px;
+   top: 10px;
+   background-color: var(--main-color);
+   color: #fff;
+   border: 1px solid var(--main-color);
+   transition: all .5s ease;
+   width: 70px;
+   height: 70px;
+}
+.open-add-modle:hover{
+    background-color: #fff;
+    color: var(--main-color)
+}
+.productes-container:hover .open-add-modle{
+    right: 10px;
+}
+
+.add-btn{
+    border: 1px solid var(--main-color);
+    transition:all .5s ease;
+    background-color: transparent
+}
+.add-btn:hover{
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+/*BTNS */
+tr button{
+    position: relative;
+    z-index: 0;
+}
+tr button i{
+    position: relative;
+    z-index: -1;
+}
