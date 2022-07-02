@@ -38,6 +38,8 @@
 - [BOOTSTRAP](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 - javaSCript
 - LocalStorage
+- Regular Expression
+- [SweetAlert2](https://sweetalert2.github.io/)
 
 ## Features
 
