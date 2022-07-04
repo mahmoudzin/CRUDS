@@ -94,8 +94,9 @@ class Product {
     })
     if(this.products.length > 0){
       this.display(this.products)
-    }
+      this.displayOldCategory()
   }
+}
   praintAlert = (id, msg, show=true)=>{
     if(show){
       document.getElementById(id).innerHTML =
@@ -178,18 +179,13 @@ class Product {
       }
   }
   displayOldCategory = () => {
-    let options = ''
-    let catFilter;
-      this.products.forEach(item => {
-        catFilter = this.products.filter(p => p.pcat == item.pcat)
-       if(catFilter.length == 1){
-        options += `<option value=${item.pcat}>${item.pcat}</option>`
-       }
-      })
-      if(catFilter.length == 1){
-        this.selCat.innerHTML += options;
-       }
-   
+    let options = '<option value=" ">chose Category....</option>'
+    let uniqueCat = Array.from(new Set(this.products.map(p => p.pcat)))
+      uniqueCat.forEach(item => {
+        options += `<option value=${item}>${item}</option>`
+      })     
+      
+      this.selCat.innerHTML = options;
   }
 
   createProduct = ()=>{
@@ -265,6 +261,7 @@ class Product {
       this.clear();
       localStorage.setItem('products', JSON.stringify(this.products));
       this.display(this.products);
+      this.displayOldCategory()
       Swal.fire({
         icon: 'success',
         title: 'Done..',
@@ -285,6 +282,7 @@ class Product {
       this.products.splice(index, 1);
       localStorage.setItem('products', JSON.stringify(this.products));
       this.display(this.products);
+      this.displayOldCategory()
   }
 //Search Function
   searchProduct = (keyword) =>{
