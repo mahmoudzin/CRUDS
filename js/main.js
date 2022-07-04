@@ -75,12 +75,15 @@ class Product {
     })
     this.search = document.getElementById('search');
     this.searchType = document.getElementById('searchType');
-    this.search.addEventListener('input',()=>{
+    this.search.autocomplete = 'off'
+    this.search.addEventListener('input',(e)=>{
+      
       this.searchProduct(this.search.value)
     })
     this.selCat = document.getElementById('selCat');
     this.selCat.addEventListener('change',()=>{
-      this.productCategory.value = this.selCat.value
+      let text = this.selCat.options[this.selCat.selectedIndex].text
+      this.productCategory.value = text
     })
     this.productName.addEventListener('input',()=>{
       this.productNameValidation()
@@ -187,7 +190,10 @@ class Product {
       
       this.selCat.innerHTML = options;
   }
-
+  setCatValue = ()=>{
+    console.log()
+      //this.selCat.value
+  }
   createProduct = ()=>{
     const product = {
         pname: this.productName.value,
