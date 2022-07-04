@@ -44,11 +44,16 @@
 ## Features
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
-- Creat Products
-- Display products
-- Delete Products
-- Update Products
-- Search Products
+- Simple style.
+
+- Beautiful alert after each operation to know what is happening in the data.
+
+- All changes are saved to localStorage
+
+- Search based on name, category or price for quick access to your data
+
+- Check that your products are written correctly through regular expression
+
 ## Contact
 
 - Linkedin [@Mahmoud-Shaaban](https://www.linkedin.com/in/mahmoud-shaaban-5192b720a/)
